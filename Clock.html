@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script>
+        //Create Digital clock using JS (12 hours format).
+        function myfunction() {
+            time = new Date();
+            let h = time.getHours();
+            let m = time.getMinutes();
+            let s = time.getSeconds();
+            var meridian = h >= 12 ? "PM" : "AM";
+            h = h % 12;
+            h = h ? h : 12;
+            h = h < 10 ? '0' + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+            var Time = h + ":" + m + ":" + s + " " + meridian;
+            document.getElementById('myid').innerText = Time;
+            setTimeout(myfunction, 1000);
+        }
+    </script>
+</head>
+
+<body onload="myfunction()">
+    <h1 id='myid'></h1>
+</body>
+
+</html>
